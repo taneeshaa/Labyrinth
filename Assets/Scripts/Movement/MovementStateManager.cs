@@ -51,9 +51,14 @@ public class MovementStateManager : MonoBehaviour
         GetDirectionAndMove();
         Gravity();
         Falling();
-
+        
         anim.SetFloat("hzInput", hzInput);
         anim.SetFloat("vInput", vInput);
+
+        if (Input.GetKey(KeyCode.Mouse0))
+        {
+            anim.SetTrigger("attack");
+        }
 
         currentState.UpdateState(this);
 
