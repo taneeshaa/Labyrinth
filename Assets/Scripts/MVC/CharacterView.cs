@@ -32,7 +32,6 @@ public class CharacterView : MonoBehaviour
                 MVController.characters[currentCharacterIndex].SetActive(false);
                 currentCharacterIndex = i;
                 MVController.characters[i].SetActive(true);
-                Debug.Log("switch successful");
             }
         }
     }
@@ -47,7 +46,6 @@ public class CharacterView : MonoBehaviour
                 MVController.accessories[currentAccessoryIndex].SetActive(false);
                 currentAccessoryIndex = i;
                 MVController.accessories[i].SetActive(true);
-                Debug.Log("switch successful");
             }
         }
     }
