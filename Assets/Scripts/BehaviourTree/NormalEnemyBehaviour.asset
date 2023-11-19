@@ -17,14 +17,21 @@ MonoBehaviour:
   nodes:
   - rid: 669171985848205313
   - rid: 669171985848205314
+  - rid: 669171985848205318
+  - rid: 669171985848205319
+  - rid: 669171985848205321
+  - rid: 669171989073625088
+  - rid: 669171989073625089
   treeState: 0
   blackboard:
     keys:
     - rid: 669171985848205315
     - rid: 669171985848205316
     - rid: 669171985848205317
-  viewPosition: {x: 185.6, y: 234.4, z: 0}
-  viewScale: {x: 0.7561437, y: 0.7561437, z: 1}
+    - rid: 669171985848205320
+    - rid: 669171989073625090
+  viewPosition: {x: 98.4, y: 110.4, z: 0}
+  viewScale: {x: 0.49717674, y: 0.49717674, z: 1}
   references:
     version: 2
     RefIds:
@@ -34,20 +41,20 @@ MonoBehaviour:
         state: 0
         started: 0
         guid: 5cdfb4f4-c48e-43c7-bc35-ac08435631d4
-        position: {x: -45, y: -225}
+        position: {x: 0, y: -165}
         blackboard:
           keys: []
         description: 
         drawGizmos: 0
         child:
-          rid: 669171985848205314
+          rid: 669171985848205321
     - rid: 669171985848205314
       type: {class: EnemyInRange, ns: , asm: Assembly-CSharp}
       data:
         state: 0
         started: 0
         guid: afea33e9918816b45a915cab0bc1519f
-        position: {x: -296.2, y: 33.19998}
+        position: {x: -120, y: 345}
         blackboard:
           keys: []
         description: 
@@ -83,4 +90,100 @@ MonoBehaviour:
       data:
         name: range
         typeName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-        value: 5
+        value: 10
+    - rid: 669171985848205318
+      type: {class: Selector, ns: TheKiwiCoder, asm: thekiwicoder.behaviourtreeeditor}
+      data:
+        state: 0
+        started: 0
+        guid: 4b72ab25577c6e34db237ab97cab66a0
+        position: {x: 0, y: 90}
+        blackboard:
+          keys: []
+        description: Enemy Behaviour Selector
+        drawGizmos: 0
+        children:
+        - rid: 669171985848205314
+        - rid: 669171989073625088
+    - rid: 669171985848205319
+      type: {class: GetNextDestination, ns: , asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: ca09ca9473f726c42a810cd8b20282a9
+        position: {x: 75, y: 480}
+        blackboard:
+          keys: []
+        description: 
+        drawGizmos: 0
+        waypointParent:
+          reference:
+            rid: 669171985848205320
+          defaultValue: {fileID: 0}
+        myTransform:
+          reference:
+            rid: 669171985848205315
+          defaultValue: {fileID: 0}
+    - rid: 669171985848205320
+      type: {class: GameObjectKey, ns: TheKiwiCoder, asm: thekiwicoder.behaviourtreeeditor}
+      data:
+        name: waypointParent
+        typeName: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        value: {fileID: 0}
+    - rid: 669171985848205321
+      type: {class: Repeat, ns: TheKiwiCoder, asm: thekiwicoder.behaviourtreeeditor}
+      data:
+        state: 0
+        started: 0
+        guid: 920b7c2402eff9f4b9311b5b288ba4f6
+        position: {x: 0, y: -15}
+        blackboard:
+          keys: []
+        description: 
+        drawGizmos: 0
+        child:
+          rid: 669171985848205318
+        restartOnSuccess: 1
+        restartOnFailure: 0
+        maxRepeats: 0
+    - rid: 669171989073625088
+      type: {class: Sequencer, ns: TheKiwiCoder, asm: thekiwicoder.behaviourtreeeditor}
+      data:
+        state: 0
+        started: 0
+        guid: 59393934dec58954bb49dea8efb46527
+        position: {x: 180, y: 315}
+        blackboard:
+          keys: []
+        description: Patrol Sequence
+        drawGizmos: 0
+        children:
+        - rid: 669171985848205319
+        - rid: 669171989073625089
+    - rid: 669171989073625089
+      type: {class: GoToTarget, ns: , asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: 0a03c35569619594b963444c476b7c56
+        position: {x: 315, y: 480}
+        blackboard:
+          keys: []
+        description: 
+        drawGizmos: 0
+        selfGameObject:
+          reference:
+            rid: 669171985848205315
+          defaultValue: {fileID: 0}
+        targetObject:
+          reference:
+            rid: 669171989073625090
+          defaultValue: {fileID: 0}
+    - rid: 669171989073625090
+      type: {class: GameObjectKey, ns: TheKiwiCoder, asm: thekiwicoder.behaviourtreeeditor}
+      data:
+        name: targetObject
+        typeName: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        value: {fileID: 0}
