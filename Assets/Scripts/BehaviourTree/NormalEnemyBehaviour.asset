@@ -22,6 +22,8 @@ MonoBehaviour:
   - rid: 669171985848205321
   - rid: 669171989073625088
   - rid: 669171989073625089
+  - rid: 669172028901687296
+  - rid: 669172028901687297
   treeState: 0
   blackboard:
     keys:
@@ -30,8 +32,8 @@ MonoBehaviour:
     - rid: 669171985848205317
     - rid: 669171985848205320
     - rid: 669171989073625090
-  viewPosition: {x: 98.4, y: 110.4, z: 0}
-  viewScale: {x: 0.49717674, y: 0.49717674, z: 1}
+  viewPosition: {x: 108.8, y: 124.8, z: 0}
+  viewScale: {x: 0.43232757, y: 0.43232757, z: 1}
   references:
     version: 2
     RefIds:
@@ -54,7 +56,7 @@ MonoBehaviour:
         state: 0
         started: 0
         guid: afea33e9918816b45a915cab0bc1519f
-        position: {x: -120, y: 345}
+        position: {x: -300, y: 480}
         blackboard:
           keys: []
         description: 
@@ -103,7 +105,7 @@ MonoBehaviour:
         description: Enemy Behaviour Selector
         drawGizmos: 0
         children:
-        - rid: 669171985848205314
+        - rid: 669172028901687296
         - rid: 669171989073625088
     - rid: 669171985848205319
       type: {class: GetNextDestination, ns: , asm: Assembly-CSharp}
@@ -187,3 +189,28 @@ MonoBehaviour:
         typeName: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         value: {fileID: 0}
+    - rid: 669172028901687296
+      type: {class: Sequencer, ns: TheKiwiCoder, asm: thekiwicoder.behaviourtreeeditor}
+      data:
+        state: 0
+        started: 0
+        guid: 035bcd4435c040c498c217d2dc548ddf
+        position: {x: -165, y: 315}
+        blackboard:
+          keys: []
+        description: Attack Sequence
+        drawGizmos: 0
+        children:
+        - rid: 669171985848205314
+        - rid: 669172028901687297
+    - rid: 669172028901687297
+      type: {class: attackPlayer, ns: , asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: e825c0f362004a645a53945a03bd0aa4
+        position: {x: -108.79076, y: 508.58466}
+        blackboard:
+          keys: []
+        description: 
+        drawGizmos: 0
