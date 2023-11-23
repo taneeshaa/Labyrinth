@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
     TheKiwiCoder.BehaviourTreeInstance behaviourTreeInstance;
     public GameObject waypointParent;
     private int randomIndex;
+    public int health = 30;
     void Start()
     {
         behaviourTreeInstance = GetComponent<TheKiwiCoder.BehaviourTreeInstance>();

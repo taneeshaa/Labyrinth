@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class CharacterView : MonoBehaviour
@@ -15,6 +16,7 @@ public class CharacterView : MonoBehaviour
     private int currentCharacterIndex = 0;
     private int currentAccessoryIndex = 0;
     private GameObject currentButton;
+    public GameObject playerGameObject;
 
     private void Start()
     {
@@ -70,5 +72,14 @@ public class CharacterView : MonoBehaviour
         accessoryCamera.SetActive(false );
         accessoryMenu.SetActive(false);
     }
-    
+
+    public void finalizeCharacter()
+    {
+        DontDestroyOnLoad(playerGameObject);
+        playerGameObject.GetComponent<AimStateManager>().enabled = true;
+        playerGameObject.GetComponent<MovementStateManager>().enabled = true;
+        playerGameObject.transform.GetChild(2).gameObject.SetActive(true);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
 }
