@@ -32,7 +32,7 @@ MonoBehaviour:
     - rid: 669171985848205317
     - rid: 669171985848205320
     - rid: 669171989073625090
-  viewPosition: {x: 173.6, y: 63.2, z: 0}
+  viewPosition: {x: 207.2, y: 65.6, z: 0}
   viewScale: {x: 0.49717674, y: 0.49717674, z: 1}
   references:
     version: 2
@@ -56,7 +56,7 @@ MonoBehaviour:
         state: 0
         started: 0
         guid: afea33e9918816b45a915cab0bc1519f
-        position: {x: -300, y: 480}
+        position: {x: -315, y: 495}
         blackboard:
           keys: []
         description: 
@@ -113,7 +113,7 @@ MonoBehaviour:
         state: 0
         started: 0
         guid: ca09ca9473f726c42a810cd8b20282a9
-        position: {x: 75, y: 480}
+        position: {x: 90, y: 480}
         blackboard:
           keys: []
         description: 

@@ -1,0 +1,149 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d285eb63c2cdd74180de7cfceaa96ad, type: 3}
+  m_Name: NPCBehaviour
+  m_EditorClassIdentifier: 
+  rootNode:
+    rid: 669172111514271745
+  nodes:
+  - rid: 669172111514271745
+  - rid: 669172111514271746
+  - rid: 669172111514271747
+  - rid: 669172111514271748
+  - rid: 669172111514271749
+  - rid: 669172111514271750
+  - rid: 669172111514271751
+  - rid: 669172111514271752
+  - rid: 669172111514271753
+  treeState: 0
+  blackboard:
+    keys: []
+  viewPosition: {x: 299.2, y: -219.2, z: 0}
+  viewScale: {x: 0.65751624, y: 0.65751624, z: 1}
+  references:
+    version: 2
+    RefIds:
+    - rid: 669172111514271745
+      type: {class: RootNode, ns: TheKiwiCoder, asm: thekiwicoder.behaviourtreeeditor}
+      data:
+        state: 0
+        started: 0
+        guid: 0c4352b1-5adc-42bd-8400-b9c4b04fdeae
+        position: {x: 0, y: 0}
+        blackboard:
+          keys: []
+        description: 
+        drawGizmos: 0
+        child:
+          rid: 669172111514271746
+    - rid: 669172111514271746
+      type: {class: Repeat, ns: TheKiwiCoder, asm: thekiwicoder.behaviourtreeeditor}
+      data:
+        state: 0
+        started: 0
+        guid: f4a2dc5c089ee8b469f4606df8f8620c
+        position: {x: 4.0855255, y: 149.12128}
+        blackboard:
+          keys: []
+        description: 
+        drawGizmos: 0
+        child:
+          rid: 669172111514271747
+        restartOnSuccess: 1
+        restartOnFailure: 0
+        maxRepeats: 0
+    - rid: 669172111514271747
+      type: {class: Selector, ns: TheKiwiCoder, asm: thekiwicoder.behaviourtreeeditor}
+      data:
+        state: 0
+        started: 0
+        guid: 5b259799930294e4bae643a631e9d8fa
+        position: {x: 0, y: 285}
+        blackboard:
+          keys: []
+        description: 
+        drawGizmos: 0
+        children:
+        - rid: 669172111514271748
+        - rid: 669172111514271749
+    - rid: 669172111514271748
+      type: {class: Sequencer, ns: TheKiwiCoder, asm: thekiwicoder.behaviourtreeeditor}
+      data:
+        state: 0
+        started: 0
+        guid: 61cf395d5adbd5e4b9a4bea560a83a96
+        position: {x: -105, y: 435}
+        blackboard:
+          keys: []
+        description: 
+        drawGizmos: 0
+        children:
+        - rid: 669172111514271750
+        - rid: 669172111514271751
+    - rid: 669172111514271749
+      type: {class: Sequencer, ns: TheKiwiCoder, asm: thekiwicoder.behaviourtreeeditor}
+      data:
+        state: 0
+        started: 0
+        guid: 930a483851a68884d9dd926a213f0d60
+        position: {x: 135, y: 450}
+        blackboard:
+          keys: []
+        description: 
+        drawGizmos: 0
+        children:
+        - rid: 669172111514271752
+        - rid: 669172111514271753
+    - rid: 669172111514271750
+      type: {class: PlayerInRange, ns: , asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: c6aec83e6fc06a44896ccc76923d30a3
+        position: {x: -285, y: 600}
+        blackboard:
+          keys: []
+        description: 
+        drawGizmos: 0
+    - rid: 669172111514271751
+      type: {class: LookAtPlayer, ns: , asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: b95d25cf7dd1e2d40851969c54a31f4e
+        position: {x: -135, y: 675}
+        blackboard:
+          keys: []
+        description: 
+        drawGizmos: 0
+    - rid: 669172111514271752
+      type: {class: GetNextTarget, ns: , asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: d8d2f3ed6aa1eca45aacbff06b4016d3
+        position: {x: 75, y: 735}
+        blackboard:
+          keys: []
+        description: 
+        drawGizmos: 0
+    - rid: 669172111514271753
+      type: {class: LookAtTarget, ns: , asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: bc225da9c8af67f4db0f4e9d55b06c81
+        position: {x: 221.26642, y: 678.3858}
+        blackboard:
+          keys: []
+        description: 
+        drawGizmos: 0
