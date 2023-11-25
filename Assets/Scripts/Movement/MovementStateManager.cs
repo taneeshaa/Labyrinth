@@ -1,8 +1,9 @@
+using Fusion;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovementStateManager : MonoBehaviour
+public class MovementStateManager : NetworkBehaviour
 {
     #region Movement
     [SerializeField] public float currentMoveSpeed = 3f;
@@ -46,8 +47,13 @@ public class MovementStateManager : MonoBehaviour
         playerHeight = controller.height;
     }
 
-    private void Update()
+    public override void FixedUpdateNetwork()
     {
+        if (HasStateAuthority == false)
+        {
+            return;
+        }
+
         GetDirectionAndMove();
         Gravity();
         Falling();
@@ -79,7 +85,7 @@ public class MovementStateManager : MonoBehaviour
 
         dir = transform.forward * vInput + transform.right * hzInput;
 
-        controller.Move((dir.normalized * currentMoveSpeed + airDir.normalized * airSpeed) * Time.deltaTime);
+        controller.Move((dir.normalized * currentMoveSpeed + airDir.normalized * airSpeed) * Runner.DeltaTime);
     }
 
     void Gravity()
@@ -93,7 +99,7 @@ public class MovementStateManager : MonoBehaviour
             velocity.y = -2f;
         }
 
-        controller.Move(velocity * Time.deltaTime);
+        controller.Move(velocity * Runner.DeltaTime);
     }
 
     void Falling() => anim.SetBool("Falling", !controller.isGrounded);

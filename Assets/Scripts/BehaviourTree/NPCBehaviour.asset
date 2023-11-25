@@ -26,12 +26,17 @@ MonoBehaviour:
   - rid: 669172111514271753
   treeState: 0
   blackboard:
-    keys: []
-  viewPosition: {x: 299.2, y: -219.2, z: 0}
-  viewScale: {x: 0.65751624, y: 0.65751624, z: 1}
+    keys:
+    - rid: 669172129447804928
+    - rid: 669172129447804929
+    - rid: 669172129447804930
+  viewPosition: {x: 170.4, y: 38.4, z: 0}
+  viewScale: {x: 0.32690176, y: 0.32690176, z: 1}
   references:
     version: 2
     RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
     - rid: 669172111514271745
       type: {class: RootNode, ns: TheKiwiCoder, asm: thekiwicoder.behaviourtreeeditor}
       data:
@@ -109,11 +114,23 @@ MonoBehaviour:
         state: 0
         started: 0
         guid: c6aec83e6fc06a44896ccc76923d30a3
-        position: {x: -285, y: 600}
+        position: {x: -285, y: 570}
         blackboard:
           keys: []
         description: 
         drawGizmos: 0
+        npcGameObject:
+          reference:
+            rid: -2
+          defaultValue: {fileID: 0}
+        playerGameObject:
+          reference:
+            rid: -2
+          defaultValue: {fileID: 0}
+        range:
+          reference:
+            rid: -2
+          defaultValue: 0
     - rid: 669172111514271751
       type: {class: LookAtPlayer, ns: , asm: Assembly-CSharp}
       data:
@@ -147,3 +164,23 @@ MonoBehaviour:
           keys: []
         description: 
         drawGizmos: 0
+    - rid: 669172129447804928
+      type: {class: GameObjectKey, ns: TheKiwiCoder, asm: thekiwicoder.behaviourtreeeditor}
+      data:
+        name: playerGameObject
+        typeName: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        value: {fileID: 0}
+    - rid: 669172129447804929
+      type: {class: GameObjectKey, ns: TheKiwiCoder, asm: thekiwicoder.behaviourtreeeditor}
+      data:
+        name: npcGameObject
+        typeName: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        value: {fileID: 0}
+    - rid: 669172129447804930
+      type: {class: FloatKey, ns: TheKiwiCoder, asm: thekiwicoder.behaviourtreeeditor}
+      data:
+        name: NPCrange
+        typeName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+        value: 0
