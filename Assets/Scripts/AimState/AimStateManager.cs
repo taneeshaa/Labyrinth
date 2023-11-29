@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using Fusion;
 
-public class AimStateManager : MonoBehaviour
+public class AimStateManager : NetworkBehaviour
 {
     AimBaseState currentState;
     public HipFireState Hip = new HipFireState();
@@ -33,13 +34,17 @@ public class AimStateManager : MonoBehaviour
         anim = GetComponent<Animator>();
         SwitchState(Hip);
     }
-    void Update()
+    private void Update()
     {
+        if (HasStateAuthority == false)
+        {
+            return;
+        }
         xAxis += Input.GetAxisRaw("Mouse X") * mouseSense;
         yAxis -= Input.GetAxisRaw("Mouse Y") * mouseSense;
         yAxis = Mathf.Clamp(yAxis, -80, 80);
 
-        vCam.m_Lens.FieldOfView = Mathf.Lerp(vCam.m_Lens.FieldOfView, currentFOV, fovSmoothSpeed *Time.deltaTime);
+        vCam.m_Lens.FieldOfView = Mathf.Lerp(vCam.m_Lens.FieldOfView, currentFOV, fovSmoothSpeed *Runner.DeltaTime);
 
         currentState.UpdateState(this);
         
@@ -48,7 +53,7 @@ public class AimStateManager : MonoBehaviour
 
         if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, aimMask))
         {
-            aimPos.position = Vector3.Lerp(aimPos.position, hit.point, aimSmoothSpeed * Time.deltaTime);
+            aimPos.position = Vector3.Lerp(aimPos.position, hit.point, aimSmoothSpeed * Runner.DeltaTime);
             actualAimPos = hit.point;
         }
     }
