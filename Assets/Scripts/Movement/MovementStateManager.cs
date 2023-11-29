@@ -41,7 +41,6 @@ public class MovementStateManager : NetworkBehaviour
     public float playerHeight;
     void Awake()
     {
-        Debug.Log("Start Called");
         anim = GetComponent<Animator>();
         controller = GetComponent<CharacterController>();
         SwitchState(Idle);
@@ -56,7 +55,6 @@ public class MovementStateManager : NetworkBehaviour
         {
             return;
         }
-        Debug.Log("FixedUpdate Called");
         GetDirectionAndMove();
         Gravity();
         Falling();
