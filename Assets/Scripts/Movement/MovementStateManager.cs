@@ -3,8 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//public class MovementStateManager : MonoBehaviour
-public class MovementStateManager : NetworkBehaviour
+public class MovementStateManager : MonoBehaviour
+//public class MovementStateManager : NetworkBehaviour
 {
     #region Movement
     [SerializeField] public float currentMoveSpeed = 3f;
@@ -44,17 +44,14 @@ public class MovementStateManager : NetworkBehaviour
         anim = GetComponent<Animator>();
         controller = GetComponent<CharacterController>();
         SwitchState(Idle);
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
         playerHeight = controller.height;
     }
 
-    public override void FixedUpdateNetwork()
-    //private void Update()
+    //public override void FixedUpdateNetwork()
+    private void Update()
     {
-        if (HasStateAuthority == false)
-        {
-            return;
-        }
+        
         GetDirectionAndMove();
         Gravity();
         Falling();
@@ -86,24 +83,24 @@ public class MovementStateManager : NetworkBehaviour
 
         dir = transform.forward * vInput + transform.right * hzInput;
 
-        controller.Move((dir.normalized * currentMoveSpeed + airDir.normalized * airSpeed) * Runner.DeltaTime);
-        //controller.Move((dir.normalized * currentMoveSpeed + airDir.normalized * airSpeed) * Time.deltaTime);
+        //controller.Move((dir.normalized * currentMoveSpeed + airDir.normalized * airSpeed) * Runner.DeltaTime);
+        controller.Move((dir.normalized * currentMoveSpeed + airDir.normalized * airSpeed) * Time.deltaTime);
     }
 
     void Gravity()
     {
         if (!controller.isGrounded)
         {
-            velocity.y += gravity * Runner.DeltaTime;
-            //velocity.y += gravity * Time.deltaTime;
+            //velocity.y += gravity * Runner.DeltaTime;
+            velocity.y += gravity * Time.deltaTime;
         }
         else if (velocity.y < 0)
         {
             velocity.y = -2f;
         }
 
-        controller.Move(velocity * Runner.DeltaTime);
-        //controller.Move(velocity * Time.deltaTime);
+        //controller.Move(velocity * Runner.DeltaTime);
+        controller.Move(velocity * Time.deltaTime);
     }
 
     void Falling() => anim.SetBool("Falling", !controller.isGrounded);

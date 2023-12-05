@@ -9,17 +9,13 @@ public class Enemy : MonoBehaviour
     public GameObject waypointParent;
     private int randomIndex;
     public int health = 30;
-    void Start()
+    void Awake()
     {
         behaviourTreeInstance = GetComponent<TheKiwiCoder.BehaviourTreeInstance>();
         behaviourTreeInstance.SetBlackboardValue("selfGameObject", gameObject);
-        behaviourTreeInstance.SetBlackboardValue("playerGameObject", GameObject.FindGameObjectWithTag("Player"));
         behaviourTreeInstance.SetBlackboardValue("waypointParent", waypointParent);
         behaviourTreeInstance.SetBlackboardValue("myTransform", gameObject);
+        behaviourTreeInstance.SetBlackboardValue("playerGameObject", GameObject.FindGameObjectWithTag("Player"));
     }
 
-    void Update()
-    {
-        
-    }
 }

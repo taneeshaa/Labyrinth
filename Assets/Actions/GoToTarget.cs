@@ -9,7 +9,7 @@ public class GoToTarget : ActionNode
     public NodeProperty<GameObject> selfGameObject, targetObject;
     private Transform myTransform, nextWavepointTransform;
     private Vector3 direction;
-    private float speed = 2f;
+    private float speed = 1f;
     protected override void OnStart() {
         myTransform = selfGameObject.Value.transform;
         nextWavepointTransform = targetObject.Value.transform;

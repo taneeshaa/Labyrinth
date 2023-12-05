@@ -1,3 +1,4 @@
+using Fusion;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,7 +21,9 @@ public class PlayerCombat : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+    //public override void FixedUpdateNetwork()
     {
+
         if (Input.GetButtonDown("Fire1"))
         {
             Attack();
@@ -37,7 +40,8 @@ public class PlayerCombat : MonoBehaviour
             if(Time.time - lastClickedTime >= timeBetweenAttacks)
             {
                 anim.runtimeAnimatorController = combo[comboCounter].animatorOV;
-                anim.Play("Attack", 0);
+                anim.SetLayerWeight(1, 1);
+                anim.Play("Attack", 1);
                 weapon.damage = combo[comboCounter].damage;
                 comboCounter++;
                 lastClickedTime = Time.time;
@@ -52,8 +56,9 @@ public class PlayerCombat : MonoBehaviour
 
     void ExitAttack()
     {
-        if(anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.9 && anim.GetCurrentAnimatorStateInfo(0).IsTag("Attack"))
+        if(anim.GetCurrentAnimatorStateInfo(1).normalizedTime > 0.9 && anim.GetCurrentAnimatorStateInfo(1).IsTag("Attack"))
         {
+            anim.SetLayerWeight(1, 0);
             Invoke("EndCombo", 1);
         }
     }

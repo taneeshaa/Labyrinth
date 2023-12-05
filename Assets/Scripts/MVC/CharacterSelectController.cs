@@ -18,7 +18,7 @@ public class CharacterSelectController : MonoBehaviour
     [HideInInspector] public List<GameObject> charactersButtons;
     [HideInInspector] public List<GameObject> accessoriesButtons;
 
-    private void Start()
+    private void Awake()
     {
         accessories = new List<GameObject>();
         characters = new List<GameObject>();

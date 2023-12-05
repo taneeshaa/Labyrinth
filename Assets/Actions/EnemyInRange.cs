@@ -12,10 +12,11 @@ public class EnemyInRange : ActionNode
     public NodeProperty<GameObject> selfGameObject, playerGameObject;
     public NodeProperty<float> range;
     private Transform myTransform, playerTransform;
+    
     private float Range;
+
     protected override void OnStart() {
         myTransform = selfGameObject.Value.transform;
-        playerTransform = playerGameObject.Value.transform;
         Range = range.Value;
     }
 
@@ -23,6 +24,8 @@ public class EnemyInRange : ActionNode
     }
 
     protected override State OnUpdate() {
+
+        playerTransform = playerGameObject.Value.transform;
         return IsInRange() ? State.Success : State.Failure;
     }
 

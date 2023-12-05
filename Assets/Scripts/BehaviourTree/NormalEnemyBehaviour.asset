@@ -32,8 +32,9 @@ MonoBehaviour:
     - rid: 669171985848205317
     - rid: 669171985848205320
     - rid: 669171989073625090
-  viewPosition: {x: 207.2, y: 65.6, z: 0}
-  viewScale: {x: 0.49717674, y: 0.49717674, z: 1}
+    - rid: 669172260187406337
+  viewPosition: {x: 24, y: 48.8, z: 0}
+  viewScale: {x: 0.375937, y: 0.375937, z: 1}
   references:
     version: 2
     RefIds:
@@ -92,7 +93,7 @@ MonoBehaviour:
       data:
         name: range
         typeName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-        value: 10
+        value: 5
     - rid: 669171985848205318
       type: {class: Selector, ns: TheKiwiCoder, asm: thekiwicoder.behaviourtreeeditor}
       data:
@@ -214,3 +215,10 @@ MonoBehaviour:
           keys: []
         description: 
         drawGizmos: 0
+    - rid: 669172260187406337
+      type: {class: GameObjectKey, ns: TheKiwiCoder, asm: thekiwicoder.behaviourtreeeditor}
+      data:
+        name: prototypeRunnerGameObject
+        typeName: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        value: {fileID: 0}
