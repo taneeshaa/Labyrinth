@@ -24,6 +24,7 @@ MonoBehaviour:
   - rid: 669171989073625089
   - rid: 669172028901687296
   - rid: 669172028901687297
+  - rid: 5860248674625126400
   treeState: 0
   blackboard:
     keys:
@@ -33,7 +34,7 @@ MonoBehaviour:
     - rid: 669171985848205320
     - rid: 669171989073625090
     - rid: 669172260187406337
-  viewPosition: {x: 24, y: 48.8, z: 0}
+  viewPosition: {x: 142.4, y: 68.8, z: 0}
   viewScale: {x: 0.375937, y: 0.375937, z: 1}
   references:
     version: 2
@@ -196,13 +197,14 @@ MonoBehaviour:
         state: 0
         started: 0
         guid: 035bcd4435c040c498c217d2dc548ddf
-        position: {x: -165, y: 315}
+        position: {x: -165, y: 345}
         blackboard:
           keys: []
         description: Attack Sequence
         drawGizmos: 0
         children:
         - rid: 669171985848205314
+        - rid: 5860248674625126400
         - rid: 669172028901687297
     - rid: 669172028901687297
       type: {class: attackPlayer, ns: , asm: Assembly-CSharp}
@@ -210,11 +212,19 @@ MonoBehaviour:
         state: 0
         started: 0
         guid: e825c0f362004a645a53945a03bd0aa4
-        position: {x: -108.79076, y: 508.58466}
+        position: {x: -30, y: 600}
         blackboard:
           keys: []
         description: 
         drawGizmos: 0
+        playerGameObject:
+          reference:
+            rid: 669171985848205316
+          defaultValue: {fileID: 0}
+        selfGameObject:
+          reference:
+            rid: 669171985848205315
+          defaultValue: {fileID: 0}
     - rid: 669172260187406337
       type: {class: GameObjectKey, ns: TheKiwiCoder, asm: thekiwicoder.behaviourtreeeditor}
       data:
@@ -222,3 +232,22 @@ MonoBehaviour:
         typeName: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         value: {fileID: 0}
+    - rid: 5860248674625126400
+      type: {class: chasePlayer, ns: , asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: 65682cf555006bc44adffdcd0e377428
+        position: {x: -255, y: 660}
+        blackboard:
+          keys: []
+        description: 
+        drawGizmos: 0
+        selfGameObject:
+          reference:
+            rid: 669171985848205315
+          defaultValue: {fileID: 0}
+        playerGameObject:
+          reference:
+            rid: 669171985848205316
+          defaultValue: {fileID: 0}
