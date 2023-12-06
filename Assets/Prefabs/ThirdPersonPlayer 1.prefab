@@ -764,7 +764,7 @@ Transform:
   m_GameObject: {fileID: 1879531224684580056}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.98, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4535,7 +4535,7 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.0001
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &8115481125141620877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4558,7 +4558,6 @@ MonoBehaviour:
   hipFOV: 0
   currentFOV: 0
   fovSmoothSpeed: 10
-  aimPos: {fileID: 0}
   actualAimPos: {x: 0, y: 0, z: 0}
   aimSmoothSpeed: 20
   aimMask:
@@ -4627,7 +4626,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90a3027ea32ad0a41a60e3de9907ba55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interpolationDataSource: 0
   combo:
   - {fileID: 11400000, guid: f495ae50ac5861449addb415abf76097, type: 2}
   - {fileID: 11400000, guid: 0f0cf8927bdeb5a46975e5ca9ca01725, type: 2}

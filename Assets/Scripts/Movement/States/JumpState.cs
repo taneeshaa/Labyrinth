@@ -6,7 +6,11 @@ public class JumpState : MovementBaseState
 {
     public override void EnterState(MovementStateManager movement)
     {
-        if (movement.previousState == movement.Idle) movement.anim.SetTrigger("IdleJump");
+        if (movement.previousState == movement.Idle)
+        {
+            movement.anim.SetTrigger("IdleJump");
+            Debug.Log("jump");
+        }
         else if (movement.previousState == movement.Walk || movement.previousState == movement.Run) movement.anim.SetTrigger("RunJump");
     }
 

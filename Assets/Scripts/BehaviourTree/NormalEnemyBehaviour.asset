@@ -16,7 +16,6 @@ MonoBehaviour:
     rid: 669171985848205313
   nodes:
   - rid: 669171985848205313
-  - rid: 669171985848205314
   - rid: 669171985848205318
   - rid: 669171985848205319
   - rid: 669171985848205321
@@ -25,16 +24,23 @@ MonoBehaviour:
   - rid: 669172028901687296
   - rid: 669172028901687297
   - rid: 5860248674625126400
+  - rid: 5860248683141660672
+  - rid: 5860248683141660673
+  - rid: 5860248683141660674
   treeState: 0
   blackboard:
     keys:
     - rid: 669171985848205315
     - rid: 669171985848205316
     - rid: 669171985848205317
+    - rid: 5860248683141660675
+    - rid: 5860248683141660678
     - rid: 669171985848205320
     - rid: 669171989073625090
     - rid: 669172260187406337
-  viewPosition: {x: 142.4, y: 68.8, z: 0}
+    - rid: 5860248683141660676
+    - rid: 5860248683141660677
+  viewPosition: {x: 191.2, y: 8, z: 0}
   viewScale: {x: 0.375937, y: 0.375937, z: 1}
   references:
     version: 2
@@ -52,29 +58,6 @@ MonoBehaviour:
         drawGizmos: 0
         child:
           rid: 669171985848205321
-    - rid: 669171985848205314
-      type: {class: EnemyInRange, ns: , asm: Assembly-CSharp}
-      data:
-        state: 0
-        started: 0
-        guid: afea33e9918816b45a915cab0bc1519f
-        position: {x: -315, y: 495}
-        blackboard:
-          keys: []
-        description: 
-        drawGizmos: 0
-        selfGameObject:
-          reference:
-            rid: 669171985848205315
-          defaultValue: {fileID: 0}
-        playerGameObject:
-          reference:
-            rid: 669171985848205316
-          defaultValue: {fileID: 0}
-        range:
-          reference:
-            rid: 669171985848205317
-          defaultValue: 0
     - rid: 669171985848205315
       type: {class: GameObjectKey, ns: TheKiwiCoder, asm: thekiwicoder.behaviourtreeeditor}
       data:
@@ -115,7 +98,7 @@ MonoBehaviour:
         state: 0
         started: 0
         guid: ca09ca9473f726c42a810cd8b20282a9
-        position: {x: 90, y: 480}
+        position: {x: 615, y: 660}
         blackboard:
           keys: []
         description: 
@@ -157,7 +140,7 @@ MonoBehaviour:
         state: 0
         started: 0
         guid: 59393934dec58954bb49dea8efb46527
-        position: {x: 180, y: 315}
+        position: {x: 585, y: 360}
         blackboard:
           keys: []
         description: Patrol Sequence
@@ -171,7 +154,7 @@ MonoBehaviour:
         state: 0
         started: 0
         guid: 0a03c35569619594b963444c476b7c56
-        position: {x: 315, y: 480}
+        position: {x: 990, y: 510}
         blackboard:
           keys: []
         description: 
@@ -197,22 +180,21 @@ MonoBehaviour:
         state: 0
         started: 0
         guid: 035bcd4435c040c498c217d2dc548ddf
-        position: {x: -165, y: 345}
+        position: {x: -285, y: 375}
         blackboard:
           keys: []
-        description: Attack Sequence
+        description: Chase Sequence
         drawGizmos: 0
         children:
-        - rid: 669171985848205314
+        - rid: 5860248683141660674
         - rid: 5860248674625126400
-        - rid: 669172028901687297
     - rid: 669172028901687297
       type: {class: attackPlayer, ns: , asm: Assembly-CSharp}
       data:
         state: 0
         started: 0
         guid: e825c0f362004a645a53945a03bd0aa4
-        position: {x: -30, y: 600}
+        position: {x: 270, y: 660}
         blackboard:
           keys: []
         description: 
@@ -251,3 +233,95 @@ MonoBehaviour:
           reference:
             rid: 669171985848205316
           defaultValue: {fileID: 0}
+    - rid: 5860248683141660672
+      type: {class: Sequencer, ns: TheKiwiCoder, asm: thekiwicoder.behaviourtreeeditor}
+      data:
+        state: 0
+        started: 0
+        guid: 8d628d3c4bd6db64c86f870a3324fdae
+        position: {x: 84.138504, y: 413.005}
+        blackboard:
+          keys: []
+        description: Attack Sequence
+        drawGizmos: 0
+        children:
+        - rid: 5860248683141660673
+        - rid: 669172028901687297
+    - rid: 5860248683141660673
+      type: {class: EnemyInAttackRange, ns: , asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: a455fcbbb84a87747a13e7f8a6bfbe14
+        position: {x: -17.072895, y: 699.2613}
+        blackboard:
+          keys: []
+        description: 
+        drawGizmos: 0
+        selfGameObject:
+          reference:
+            rid: 669171985848205315
+          defaultValue: {fileID: 0}
+        playerGameObject:
+          reference:
+            rid: 669171985848205316
+          defaultValue: {fileID: 0}
+        upperrange:
+          reference:
+            rid: 5860248683141660676
+          defaultValue: 0.3
+        lowerrange:
+          reference:
+            rid: 5860248683141660677
+          defaultValue: 0.2
+    - rid: 5860248683141660674
+      type: {class: EnemyInChaseRange, ns: , asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: ac426be2b8f79994e9c370d6aaafdf6c
+        position: {x: -495, y: 600}
+        blackboard:
+          keys: []
+        description: 
+        drawGizmos: 0
+        selfGameObject:
+          reference:
+            rid: 669171985848205315
+          defaultValue: {fileID: 0}
+        playerGameObject:
+          reference:
+            rid: 669171985848205316
+          defaultValue: {fileID: 0}
+        upperrange:
+          reference:
+            rid: 5860248683141660675
+          defaultValue: 4
+        lowerrange:
+          reference:
+            rid: 5860248683141660678
+          defaultValue: 0.7
+    - rid: 5860248683141660675
+      type: {class: FloatKey, ns: TheKiwiCoder, asm: thekiwicoder.behaviourtreeeditor}
+      data:
+        name: upperrangeChase
+        typeName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+        value: 4
+    - rid: 5860248683141660676
+      type: {class: FloatKey, ns: TheKiwiCoder, asm: thekiwicoder.behaviourtreeeditor}
+      data:
+        name: upperrangeAttack
+        typeName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+        value: 1.4
+    - rid: 5860248683141660677
+      type: {class: FloatKey, ns: TheKiwiCoder, asm: thekiwicoder.behaviourtreeeditor}
+      data:
+        name: lowerrangeAttack
+        typeName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+        value: 1
+    - rid: 5860248683141660678
+      type: {class: FloatKey, ns: TheKiwiCoder, asm: thekiwicoder.behaviourtreeeditor}
+      data:
+        name: lowerrangeChase
+        typeName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+        value: 1.5
