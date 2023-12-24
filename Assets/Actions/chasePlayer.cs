@@ -11,8 +11,6 @@ public class chasePlayer : ActionNode
     public NodeProperty<GameObject> selfGameObject, playerGameObject;
     public NodeProperty<float> upperRangeChase, lowerRangeChase;
     private Transform myTransform, playerTransform;
-    private float speed = 0.6f;
-    private Rigidbody rb;
     private NavMeshAgent agent;
     private Animator anim;
     private float upperRange, lowerRange;
@@ -31,7 +29,6 @@ public class chasePlayer : ActionNode
         upperRange = upperRangeChase.Value;
         lowerRange = lowerRangeChase.Value;
         
-        rb = selfGameObject.Value.GetComponent<Rigidbody>();
         agent = selfGameObject.Value.GetComponent<NavMeshAgent>();
         anim = selfGameObject.Value.GetComponent<Animator>();
     }

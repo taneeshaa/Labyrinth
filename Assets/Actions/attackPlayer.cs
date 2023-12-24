@@ -5,18 +5,14 @@ using TheKiwiCoder;
 using UnityEngine.UIElements;
 
 [System.Serializable]
-public class attackPlayer : ActionNode
+public class AttackPlayer : ActionNode
 {
     public NodeProperty<GameObject> playerGameObject, selfGameObject;
-    private Transform myTransform, playerTransform;
     private Animator anim;
-    private Vector3 distance;
     
     protected override void OnStart()
     {
         anim = selfGameObject.Value.GetComponent<Animator>();
-        myTransform = selfGameObject.Value.transform;
-        playerTransform = playerGameObject.Value.transform;
     }
 
     protected override void OnStop()
@@ -25,14 +21,8 @@ public class attackPlayer : ActionNode
 
     protected override State OnUpdate()
     {
-        calculateDistance();
-
         anim.SetBool("attack", true);
         return State.Success;
     }
 
-    void calculateDistance()
-    {
-        distance = playerTransform.position - myTransform.position;
-    }
 }

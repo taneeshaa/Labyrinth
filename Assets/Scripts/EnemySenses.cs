@@ -13,12 +13,7 @@ public class EnemySenses : MonoBehaviour
     public LayerMask obstacleMask;
 
     public GameObject player;
-    void Start()
-    {
 
-    }
-
-    // Update is called once per frame
     void Update()
     {
         Vector3 playerTarget = (player.transform.position - transform.position).normalized;
