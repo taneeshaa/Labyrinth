@@ -26,10 +26,8 @@ public class attackPlayer : ActionNode
     protected override State OnUpdate()
     {
         calculateDistance();
-        if(distance.magnitude > 0.2f)
-        {
-            anim.SetTrigger("attack");
-        }
+
+        anim.SetBool("attack", true);
         return State.Success;
     }
 

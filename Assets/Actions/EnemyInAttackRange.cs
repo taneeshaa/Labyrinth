@@ -36,6 +36,6 @@ public class EnemyInAttackRange : ActionNode
 
     bool IsInRange()
     {
-        return Vector3.Distance(myTransform.position, playerTransform.position) <= upperRange && Vector3.Distance(myTransform.position, playerTransform.position) > lowerRange;
+        return Vector3.Distance(myTransform.position, playerTransform.position) <= upperRange;
     }
 }

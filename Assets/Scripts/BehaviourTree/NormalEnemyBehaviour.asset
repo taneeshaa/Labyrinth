@@ -40,11 +40,13 @@ MonoBehaviour:
     - rid: 669172260187406337
     - rid: 5860248683141660676
     - rid: 5860248683141660677
-  viewPosition: {x: 191.2, y: 8, z: 0}
-  viewScale: {x: 0.375937, y: 0.375937, z: 1}
+  viewPosition: {x: 140.8, y: -72, z: 0}
+  viewScale: {x: 0.43232757, y: 0.43232757, z: 1}
   references:
     version: 2
     RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
     - rid: 669171985848205313
       type: {class: RootNode, ns: TheKiwiCoder, asm: thekiwicoder.behaviourtreeeditor}
       data:
@@ -91,6 +93,7 @@ MonoBehaviour:
         drawGizmos: 0
         children:
         - rid: 669172028901687296
+        - rid: 5860248683141660672
         - rid: 669171989073625088
     - rid: 669171985848205319
       type: {class: GetNextDestination, ns: , asm: Assembly-CSharp}
@@ -233,6 +236,14 @@ MonoBehaviour:
           reference:
             rid: 669171985848205316
           defaultValue: {fileID: 0}
+        upperRangeChase:
+          reference:
+            rid: -2
+          defaultValue: 0
+        lowerRangeChase:
+          reference:
+            rid: -2
+          defaultValue: 0
     - rid: 5860248683141660672
       type: {class: Sequencer, ns: TheKiwiCoder, asm: thekiwicoder.behaviourtreeeditor}
       data:
@@ -312,16 +323,16 @@ MonoBehaviour:
       data:
         name: upperrangeAttack
         typeName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-        value: 1.4
+        value: 0.9
     - rid: 5860248683141660677
       type: {class: FloatKey, ns: TheKiwiCoder, asm: thekiwicoder.behaviourtreeeditor}
       data:
         name: lowerrangeAttack
         typeName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-        value: 1
+        value: 0.5
     - rid: 5860248683141660678
       type: {class: FloatKey, ns: TheKiwiCoder, asm: thekiwicoder.behaviourtreeeditor}
       data:
         name: lowerrangeChase
         typeName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-        value: 1.5
+        value: 1

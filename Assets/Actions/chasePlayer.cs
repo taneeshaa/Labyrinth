@@ -3,14 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using TheKiwiCoder;
 using TMPro;
+using UnityEngine.AI;
 
 [System.Serializable]
 public class chasePlayer : ActionNode
 {
     public NodeProperty<GameObject> selfGameObject, playerGameObject;
+    public NodeProperty<float> upperRangeChase, lowerRangeChase;
     private Transform myTransform, playerTransform;
     private float speed = 0.6f;
     private Rigidbody rb;
+    private NavMeshAgent agent;
+    private Animator anim;
+    private float upperRange, lowerRange;
 
     private Vector3 playerGroundedTransform;
 
@@ -22,7 +27,13 @@ public class chasePlayer : ActionNode
         myTransform = selfGameObject.Value.transform;
         playerTransform = playerGameObject.Value.transform;
         direction = playerTransform.position - myTransform.position;
+
+        upperRange = upperRangeChase.Value;
+        lowerRange = lowerRangeChase.Value;
+        
         rb = selfGameObject.Value.GetComponent<Rigidbody>();
+        agent = selfGameObject.Value.GetComponent<NavMeshAgent>();
+        anim = selfGameObject.Value.GetComponent<Animator>();
     }
 
     protected override void OnStop()
@@ -34,7 +45,7 @@ public class chasePlayer : ActionNode
         playerGroundedTransform = new Vector3(myTransform.position.x, myTransform.position.y, myTransform.position.z);
         direction = playerTransform.position - myTransform.position;
 
-        if (direction.magnitude > 0.7f && direction.magnitude < 4f)
+        if (direction.magnitude > 0.9f && direction.magnitude < 4f)
         {
             ChasePlayer();
             return State.Success;
@@ -48,17 +59,7 @@ public class chasePlayer : ActionNode
 
     void ChasePlayer()
     {
-        rb.MovePosition(Vector3.Lerp(rb.position, playerTransform.position, Time.deltaTime * speed));
-
-        Vector3 directionToTarget = playerTransform.position - myTransform.position;
-        Quaternion targetRotation = Quaternion.LookRotation(directionToTarget);
-
-        // Smoothly interpolate between the current rotation and the target rotation
-        Quaternion newRotation = Quaternion.RotateTowards(myTransform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
-
-        // Apply the new rotation to the Rigidbody using MoveRotation
-        rb.MoveRotation(newRotation);
-
-
+        anim.SetBool("attack", false);
+        agent.SetDestination(playerTransform.position);
     }
 }
