@@ -28,7 +28,7 @@ public class MovementStateManager : MonoBehaviour
     #endregion
 
     public MovementBaseState previousState;
-    MovementBaseState currentState;
+    [HideInInspector] public MovementBaseState currentState;
 
     public IdleState Idle = new IdleState();
     public WalkState Walk = new WalkState();
@@ -48,7 +48,6 @@ public class MovementStateManager : MonoBehaviour
         playerHeight = controller.height;
     }
 
-    //public override void FixedUpdateNetwork()
     private void Update()
     {
         
@@ -83,7 +82,6 @@ public class MovementStateManager : MonoBehaviour
 
         dir = transform.forward * vInput + transform.right * hzInput;
 
-        //controller.Move((dir.normalized * currentMoveSpeed + airDir.normalized * airSpeed) * Runner.DeltaTime);
         controller.Move((dir.normalized * currentMoveSpeed + airDir.normalized * airSpeed) * Time.deltaTime);
     }
 
@@ -91,7 +89,6 @@ public class MovementStateManager : MonoBehaviour
     {
         if (!controller.isGrounded)
         {
-            //velocity.y += gravity * Runner.DeltaTime;
             velocity.y += gravity * Time.deltaTime;
         }
         else if (velocity.y < 0)
@@ -99,7 +96,6 @@ public class MovementStateManager : MonoBehaviour
             velocity.y = -2f;
         }
 
-        //controller.Move(velocity * Runner.DeltaTime);
         controller.Move(velocity * Time.deltaTime);
     }
 

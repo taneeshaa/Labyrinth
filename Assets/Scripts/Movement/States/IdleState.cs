@@ -6,7 +6,7 @@ public class IdleState : MovementBaseState
 {
     public override void EnterState(MovementStateManager movement)
     {
-
+        movement.currentMoveSpeed = 0;
     }
 
     public override void UpdateState(MovementStateManager movement)
