@@ -2333,7 +2333,7 @@ Transform:
   m_GameObject: {fileID: 4802787436090790874}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.44000193, y: 0.9000001, z: -1.9999998}
+  m_LocalPosition: {x: 0.44000036, y: 1.56, z: -2.0000007}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4485,6 +4485,7 @@ GameObject:
   - component: {fileID: 9204650895072489900}
   - component: {fileID: 940959451546031310}
   - component: {fileID: 6139080728141112830}
+  - component: {fileID: 6043100484005002091}
   m_Layer: 3
   m_Name: ThirdPersonPlayer 1
   m_TagString: Player
@@ -4633,6 +4634,21 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0f0cf8927bdeb5a46975e5ca9ca01725, type: 2}
   - {fileID: 11400000, guid: e354316a861554f40b562d7813c0d98a, type: 2}
   weapon: {fileID: 1549361899971770046}
+--- !u!114 &6043100484005002091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8665638570275913171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e98bddd0f301e894b918ccc471209cc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 0
+  healthbar: {fileID: 0}
 --- !u!1 &8677210016826246253
 GameObject:
   m_ObjectHideFlags: 0
