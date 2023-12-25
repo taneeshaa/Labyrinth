@@ -16,11 +16,15 @@ public class Weapon : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         var enemy = other.gameObject.GetComponent<Enemy>();
+        var anim = other.gameObject.GetComponent<Animator>();
         if (enemy != null)
         {
             enemy.health -= damage;
+            anim.SetTrigger("pain");
+            
             if (enemy.health <= 0)
             {
+                anim.SetTrigger("death");
                 Destroy(enemy.gameObject);
             }
 

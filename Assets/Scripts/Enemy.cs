@@ -17,4 +17,5 @@ public class Enemy : MonoBehaviour
         behaviourTreeInstance.SetBlackboardValue("playerGameObject", GameObject.FindGameObjectWithTag("Player"));
     }
 
+
 }
