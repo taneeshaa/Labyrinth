@@ -30,6 +30,7 @@ public class AttackPlayer : ActionNode
         {
             timer = countDownTime;
             health.currentHealth -= 10;
+            health.healthbar.SetHealth(health.currentHealth/100);
         }
         return State.Success;
     }
