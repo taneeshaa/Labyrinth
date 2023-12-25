@@ -27,7 +27,7 @@ public class EnemySenses : MonoBehaviour
             {
                 if(Physics.Raycast(transform.position, playerTarget, distanceToTarget, obstacleMask) == false)
                 {
-                    Debug.Log("I have seen you :)");
+                    //Debug.Log("I have seen you :)");
                 }
             }
         }
@@ -35,7 +35,7 @@ public class EnemySenses : MonoBehaviour
             player.GetComponent<MovementStateManager>().currentState == player.GetComponent<MovementStateManager>().Crouch;
         if ( !playerNotMakingNoise && distanceToTarget < hearRadius)
         {
-            Debug.Log("I can hear you :)");
+            //Debug.Log("I can hear you :)");
         }
     }
 }

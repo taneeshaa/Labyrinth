@@ -37,10 +37,10 @@ MonoBehaviour:
     - rid: 5860248683141660678
     - rid: 669171985848205320
     - rid: 669171989073625090
-    - rid: 669172260187406337
     - rid: 5860248683141660676
     - rid: 5860248683141660677
-  viewPosition: {x: 112, y: 45.6, z: 0}
+    - rid: 669172260187406337
+  viewPosition: {x: 167.2, y: 25.6, z: 0}
   viewScale: {x: 0.32690176, y: 0.32690176, z: 1}
   references:
     version: 2
@@ -313,7 +313,7 @@ MonoBehaviour:
         state: 0
         started: 0
         guid: d2c2946b36683df48a1c751ce8381e33
-        position: {x: -275.0337, y: 639.68506}
+        position: {x: -285, y: 630}
         blackboard:
           keys: []
         description: 

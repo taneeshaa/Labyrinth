@@ -10,6 +10,7 @@ public class JumpState : MovementBaseState
         {
             movement.anim.SetTrigger("IdleJump");
             Debug.Log("jump");
+            movement.SwitchState(movement.Idle);
         }
         else if (movement.previousState == movement.Walk || movement.previousState == movement.Run) movement.anim.SetTrigger("RunJump");
     }
