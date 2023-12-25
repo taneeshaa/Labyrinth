@@ -15,7 +15,6 @@ public class AttackPlayer : ActionNode
     protected override void OnStart()
     {
         anim = selfGameObject.Value.GetComponent<Animator>();
-        Debug.Log("grabbing player health component");
         health = playerGameObject.Value.GetComponent<PlayerHealth>();
     }
 
@@ -25,18 +24,12 @@ public class AttackPlayer : ActionNode
 
     protected override State OnUpdate()
     {
-        if(health == null)
-        {
-            //Debug.Log("health is null");
-        }
         anim.SetBool("attack", true);
         timer = timer - Time.deltaTime;
         if(timer < 0)
         {
             timer = countDownTime;
-            Debug.Log("player damage taken");
             health.currentHealth -= 10;
-            //Debug.Log(health.currentHealth);
         }
         return State.Success;
     }

@@ -10,7 +10,6 @@ public class PlayerHealth : MonoBehaviour
 
     void Awake()
     {
-        Debug.Log("initialized healthj");
         currentHealth = maxHealth;
         //healthbar.SetMaxHealth(maxHealth);
     }
