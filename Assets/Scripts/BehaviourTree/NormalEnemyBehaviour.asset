@@ -40,8 +40,8 @@ MonoBehaviour:
     - rid: 5860248683141660676
     - rid: 5860248683141660677
     - rid: 669172260187406337
-  viewPosition: {x: 167.2, y: 25.6, z: 0}
-  viewScale: {x: 0.32690176, y: 0.32690176, z: 1}
+  viewPosition: {x: 80, y: 92.8, z: 0}
+  viewScale: {x: 0.25, y: 0.25, z: 1}
   references:
     version: 2
     RefIds:
@@ -294,7 +294,7 @@ MonoBehaviour:
         state: 0
         started: 0
         guid: 6059f5d3637dfe6449ddf067b24db7d7
-        position: {x: 210, y: 705}
+        position: {x: 240, y: 675}
         blackboard:
           keys: []
         description: 

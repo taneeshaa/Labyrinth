@@ -7,15 +7,17 @@ using UnityEngine.UIElements;
 [System.Serializable]
 public class AttackPlayer : ActionNode
 {
-    public NodeProperty<GameObject> playerGameObject, selfGameObject;
+    public NodeProperty<GameObject> playerGameObject, selfGameObject, Healthbar;
     private Animator anim;
     private float countDownTime = 3f;
     private float timer = 3f;
     private PlayerHealth health;
+    private Healthbar healthbarComponent;
     protected override void OnStart()
     {
         anim = selfGameObject.Value.GetComponent<Animator>();
         health = playerGameObject.Value.GetComponent<PlayerHealth>();
+        healthbarComponent = Healthbar.Value.GetComponent<Healthbar>();
     }
 
     protected override void OnStop()
@@ -30,7 +32,8 @@ public class AttackPlayer : ActionNode
         {
             timer = countDownTime;
             health.currentHealth -= 10;
-            health.healthbar.SetHealth(health.currentHealth/100);
+            //health.healthbar.SetHealth(health.currentHealth/100);
+            healthbarComponent.SetHealth(health.currentHealth/100);
         }
         return State.Success;
     }

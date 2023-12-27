@@ -15,6 +15,7 @@ public class Enemy : MonoBehaviour
         behaviourTreeInstance.SetBlackboardValue("waypointParent", waypointParent);
         behaviourTreeInstance.SetBlackboardValue("myTransform", gameObject);
         behaviourTreeInstance.SetBlackboardValue("playerGameObject", GameObject.FindGameObjectWithTag("Player"));
+        behaviourTreeInstance.SetBlackboardValue("healthbar", GameObject.FindGameObjectWithTag("Healthbar"));
     }
 
 
