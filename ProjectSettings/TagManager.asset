@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Prototype Runner
+  - Healthbar
   layers:
   - Default
   - TransparentFX
