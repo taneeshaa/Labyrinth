@@ -43,8 +43,10 @@ MonoBehaviour:
     - rid: 669172260187406337
     - rid: 5860248683141660676
     - rid: 5860248683141660677
-  viewPosition: {x: 583.2, y: 69.6, z: 0}
-  viewScale: {x: 0.65751624, y: 0.65751624, z: 1}
+    - rid: 5860249193355149312
+    - rid: 5860249193355149313
+  viewPosition: {x: 122.4, y: -141.6, z: 0}
+  viewScale: {x: 0.57175326, y: 0.57175326, z: 1}
   references:
     version: 2
     RefIds:
@@ -284,6 +286,10 @@ MonoBehaviour:
           reference:
             rid: 669171985848205315
           defaultValue: {fileID: 0}
+        Healthbar:
+          reference:
+            rid: 5860249193355149313
+          defaultValue: {fileID: 0}
     - rid: 5860249098127147010
       type: {class: chasePlayer, ns: , asm: Assembly-CSharp}
       data:
@@ -390,3 +396,17 @@ MonoBehaviour:
           reference:
             rid: 669171985848205316
           defaultValue: {fileID: 0}
+    - rid: 5860249193355149312
+      type: {class: GameObjectKey, ns: TheKiwiCoder, asm: thekiwicoder.behaviourtreeeditor}
+      data:
+        name: Healthbar
+        typeName: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        value: {fileID: 0}
+    - rid: 5860249193355149313
+      type: {class: GameObjectKey, ns: TheKiwiCoder, asm: thekiwicoder.behaviourtreeeditor}
+      data:
+        name: healthbar
+        typeName: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        value: {fileID: 0}

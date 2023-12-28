@@ -2333,7 +2333,7 @@ Transform:
   m_GameObject: {fileID: 4802787436090790874}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.43999743, y: 1.56, z: -2.0000057}
+  m_LocalPosition: {x: 0.44000036, y: 1.56, z: -2.0000007}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4486,6 +4486,7 @@ GameObject:
   - component: {fileID: 940959451546031310}
   - component: {fileID: 6139080728141112830}
   - component: {fileID: 6043100484005002091}
+  - component: {fileID: 6199360617324388424}
   m_Layer: 3
   m_Name: ThirdPersonPlayer 1
   m_TagString: Player
@@ -4650,6 +4651,19 @@ MonoBehaviour:
   currentHealth: 0
   healthbar: {fileID: 5410626626993298575, guid: 26bb0525de7e06f45ae0ad0ca17db75b,
     type: 3}
+--- !u!114 &6199360617324388424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8665638570275913171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 671e33062a0568b41be23cd4d73b2f3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: {fileID: 11400000, guid: 095123dd460dca2429a2cb7d7aada97f, type: 2}
 --- !u!1 &8677210016826246253
 GameObject:
   m_ObjectHideFlags: 0

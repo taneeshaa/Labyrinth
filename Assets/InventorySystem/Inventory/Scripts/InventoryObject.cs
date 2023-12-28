@@ -5,7 +5,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Inventory", menuName = "Inventory System/Inventory")]
 public class InventoryObject : ScriptableObject
 {
-    public ItemDatabaseObject database;
     public List<InventorySlot> Container = new List<InventorySlot>();
     public void AddItem(ItemObject _item, int _amount)
     {
@@ -17,7 +16,7 @@ public class InventoryObject : ScriptableObject
                 return;
             }
         }
-        Container.Add(new InventorySlot(database.GetId[_item], _item, _amount));
+        Container.Add(new InventorySlot( _item, _amount));
         
     }
 
@@ -26,12 +25,10 @@ public class InventoryObject : ScriptableObject
 [System.Serializable]
 public class InventorySlot
 {
-    public int ID;
     public ItemObject item;
     public int amount;
-    public InventorySlot(int _id, ItemObject _item, int _amount)
+    public InventorySlot( ItemObject _item, int _amount)
     {
-        ID = _id;
         item = _item;
         amount = _amount;
     }
