@@ -20,6 +20,7 @@ public class InventoryObject : ScriptableObject
         Container.Add(new InventorySlot(database.GetId[_item], _item, _amount));
         
     }
+
 }
 
 [System.Serializable]

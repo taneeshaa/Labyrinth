@@ -7,7 +7,6 @@ public class ItemDatabaseObject : ScriptableObject, ISerializationCallbackReceiv
 {
     public ItemObject[] Items;
     public Dictionary<ItemObject, int> GetId = new Dictionary<ItemObject, int>();
-
     
     public void OnAfterDeserialize()
     {
@@ -17,7 +16,6 @@ public class ItemDatabaseObject : ScriptableObject, ISerializationCallbackReceiv
             GetId.Add(Items[i], i);
         }
     }
-
     public void OnBeforeSerialize()
     {
         
